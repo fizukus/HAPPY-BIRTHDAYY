@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>З днем народження, кохана!</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&display=swap&subset=cyrillic" rel="stylesheet">
+<style>
+:root{--wood:#a8693f;--seam:rgba(70,20,10,.38);--glow:rgba(255,190,170,.34);--vig:rgba(100,0,45,.5);--ink:#2b2b2b;--cream:#fffaf0;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--wood:#74442a;--seam:rgba(0,0,0,.5);--glow:rgba(255,160,150,.16);--vig:rgba(60,0,30,.6)}}
+:root[data-theme="dark"]{--wood:#74442a;--seam:rgba(0,0,0,.5);--glow:rgba(255,160,150,.16);--vig:rgba(60,0,30,.6)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;color:#fff;font-family:"Caveat",cursive,system-ui;overflow-x:hidden;background-color:var(--wood);
+  background-image:
+   radial-gradient(ellipse at 50% 25%,var(--glow),transparent 70%),
+   repeating-linear-gradient(90deg,transparent 0 158px,var(--seam) 158px 160px),
+   repeating-linear-gradient(90deg,rgba(255,255,255,.05) 0 3px,rgba(0,0,0,.05) 3px 9px,rgba(255,255,255,.02) 9px 14px);
+  background-attachment:fixed}
+.vig{position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(ellipse at 50% 45%,transparent 45%,var(--vig))}
+.heart{position:absolute;width:18px;height:16px;background:#e11d48;clip-path:path("M9 16C-4 7 0 -1 6 1C8 1.6 9 3 9 4C9 3 10 1.6 12 1C18 -1 22 7 9 16Z")}
+/* floating hearts */
+.fh{position:fixed;bottom:-30px;z-index:3;pointer-events:none;background:var(--c,#fb7185);opacity:0;animation:rise var(--d,20s) linear var(--l,0s) infinite}
+@keyframes rise{0%{transform:translate(0,0) scale(var(--s));opacity:0}12%{opacity:.6}85%{opacity:.5}100%{transform:translate(var(--x),-112vh) scale(var(--s));opacity:0}}
+/* hero */
+.hero{min-height:94vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px;position:relative;z-index:1}
+.title{--r:-2deg;background:var(--cream);color:var(--ink);padding:48px clamp(28px,6vw,72px);text-align:center;max-width:680px;position:relative;
+  transform:rotate(var(--r));box-shadow:0 18px 30px rgba(0,0,0,.4),0 2px 5px rgba(0,0,0,.25)}
+.title:before,.note:before{content:"";position:absolute;top:-12px;left:50%;width:90px;height:26px;margin-left:-45px;background:rgba(255,255,255,.55);transform:rotate(-3deg);box-shadow:0 1px 3px rgba(0,0,0,.15);z-index:2}
+.title h1{font-size:clamp(46px,9.5vw,88px);margin:0;line-height:.95;font-weight:700;position:relative}
+.title p{font-size:clamp(22px,4vw,30px);margin:16px 0 0;opacity:.75;position:relative}
+.kisses{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.k{position:absolute;fill:#c8102e;mix-blend-mode:multiply;height:auto}
+.arrow{margin-top:34px;border-left:14px solid transparent;border-right:14px solid transparent;border-top:20px solid var(--cream);filter:drop-shadow(0 2px 3px rgba(0,0,0,.4));animation:bob 1.6s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(10px)}}
+/* desk props */
+.desk{position:relative}
+.p{position:absolute;z-index:0;pointer-events:none}
+.mug{width:112px;height:112px;border-radius:50%;background:#f1f5f9;box-shadow:0 10px 16px rgba(0,0,0,.35);left:70%;top:5%}
+.mug:before{content:"";position:absolute;inset:10px;border-radius:50%;background:radial-gradient(#6b432b 55%,#4a2c1a);box-shadow:inset 0 0 0 3px #e2e8f0}
+.mug:after{content:"";position:absolute;right:-26px;top:34px;width:34px;height:44px;border:9px solid #f1f5f9;border-left:0;border-radius:0 24px 24px 0}
+.mug .heart{left:40px;top:42px;transform:scale(1.15);background:#f5e6d3;z-index:1}
+.pencil{width:200px;height:17px;background:#facc15;left:5%;top:20%;transform:rotate(24deg);box-shadow:0 6px 8px rgba(0,0,0,.3);border-radius:0 2px 2px 0}
+.pencil:before{content:"";position:absolute;left:-26px;top:0;border-right:26px solid #f5deb3;border-top:8.5px solid transparent;border-bottom:8.5px solid transparent}
+.pencil:after{content:"";position:absolute;right:0;top:0;width:26px;height:17px;background:#f472b6;border-left:6px solid #cbd5e1}
+.pencil2{left:66%;top:84%;transform:rotate(-18deg);background:#38bdf8}
+.pencil2:after{background:#fb7185}
+.ruler{width:280px;height:42px;left:62%;top:40%;transform:rotate(-68deg);background:repeating-linear-gradient(90deg,#1e293b 0 1px,transparent 1px 14px) top/100% 12px no-repeat,rgba(253,224,71,.85);border-radius:3px;box-shadow:0 6px 10px rgba(0,0,0,.3)}
+.plant{width:96px;height:96px;left:7%;top:60%}
+.plant b{position:absolute;inset:14px;border-radius:50%;background:#c2410c;box-shadow:0 8px 14px rgba(0,0,0,.4);z-index:1}
+.plant b:after{content:"";position:absolute;inset:9px;border-radius:50%;background:#78350f}
+.plant i{position:absolute;left:50%;top:50%;width:22px;height:48px;margin:-24px 0 0 -11px;border-radius:50%;background:#22a45d;transform:rotate(var(--a)) translateY(-26px);z-index:2;box-shadow:inset -4px 0 0 rgba(0,0,0,.15)}
+.rose{width:92px;height:92px;left:78%;top:64%}
+.rose:before,.rose:after{content:"";position:absolute;width:46px;height:22px;background:#15803d;border-radius:0 90% 0 90%;top:60px;box-shadow:0 4px 6px rgba(0,0,0,.3)}
+.rose:before{left:-26px;transform:rotate(30deg)}.rose:after{right:-22px;transform:rotate(-20deg) scaleX(-1)}
+.rose b{position:absolute;inset:0;border-radius:50%;background:repeating-radial-gradient(circle,#9f1239 0 5px,#e11d48 5px 11px);box-shadow:0 8px 14px rgba(0,0,0,.4);z-index:1}
+.petal{width:34px;height:26px;background:#e11d48;border-radius:80% 0 80% 0;box-shadow:0 3px 5px rgba(0,0,0,.3)}
+.lip{width:130px;height:30px;left:12%;top:3%;transform:rotate(-14deg);background:linear-gradient(90deg,#d4af37 0 12%,#111827 12%);border-radius:0 4px 4px 0;box-shadow:0 7px 10px rgba(0,0,0,.4)}
+.lip:before{content:"";position:absolute;left:-38px;top:4px;width:38px;height:22px;background:#dc2626;border-radius:12px 0 0 12px;clip-path:polygon(0 25%,100% 0,100% 100%,0 100%)}
+@media(max-width:700px){.pencil{width:150px}}
+/* notes */
+.board{position:relative;z-index:1;max-width:820px;margin:0 auto;padding:0 20px 8vh}
+.note{--r:-2deg;width:min(100%,330px);min-height:230px;margin:0 0 14vh;padding:38px 26px 54px;color:var(--ink);
+  font-size:27px;line-height:1.15;font-weight:500;background:var(--bg,#fde68a);position:relative;
+  box-shadow:0 14px 22px rgba(0,0,0,.35),0 2px 4px rgba(0,0,0,.25);transform:rotate(var(--r));
+  opacity:0;transition:opacity .35s,transform .45s cubic-bezier(.3,1.6,.5,1)}
+.note.long{width:min(100%,430px);font-size:26px}
+.note:after{content:"";position:absolute;right:0;bottom:0;width:30px;height:30px;background:linear-gradient(135deg,rgba(0,0,0,.14) 50%,transparent 50%)}
+.note .heart{left:24px;bottom:20px;transform:scale(1.2);background:rgba(225,29,72,.8)}
+.note:not(.show){transform:translateY(30px) scale(1.18) rotate(calc(var(--r) * -2))}
+.note.show{opacity:1}
+.note:nth-child(odd){margin-left:2%}
+.note:nth-child(even){margin-left:auto;margin-right:2%}
+.note:nth-child(3n){margin-left:auto;margin-right:auto}
+/* finale */
+.finale{position:relative;z-index:1;padding:2vh 20px 90px;display:flex;flex-direction:column;align-items:center}
+.hint{--r:2deg;margin:0 0 8vh;width:min(100%,300px);min-height:0}
+.stage{--w:clamp(200px,50vw,380px);display:flex;align-items:flex-end;justify-content:center;gap:calc(var(--w)*.16);width:100%;padding-left:2vw}
+.laptop{position:relative;width:var(--w);z-index:2;filter:drop-shadow(0 16px 18px rgba(0,0,0,.45))}
+.screen{height:calc(var(--w)*.52);background:#334155;border-radius:calc(var(--w)*.04) calc(var(--w)*.04) 0 0;padding:calc(var(--w)*.03) calc(var(--w)*.03) calc(var(--w)*.015)}
+.disp{width:100%;height:100%;background:#0b1226;border-radius:3px;display:grid;place-items:center;transition:background .6s}
+.disp:after{content:"";width:calc(var(--w)*.05);height:calc(var(--w)*.05);border-radius:50%;background:#1e293b;transition:.4s}
+.on .disp{background:linear-gradient(135deg,#fb7185,#e11d48)}
+.on .disp:after{background:#fff;border-radius:0;clip-path:polygon(30% 15%,30% 85%,85% 50%);width:calc(var(--w)*.12);height:calc(var(--w)*.12)}
+.base{position:relative;height:calc(var(--w)*.56);background:#cbd5e1;border-top:3px solid #94a3b8;border-radius:0 0 calc(var(--w)*.04) calc(var(--w)*.04)}
+.keys{position:absolute;left:6%;right:6%;top:8%;height:52%;border-radius:3px;background:repeating-linear-gradient(0deg,#cbd5e1 0 3px,transparent 3px 20%),repeating-linear-gradient(90deg,#cbd5e1 0 3px,#475569 3px 9.09%)}
+.pad{position:absolute;left:35%;width:30%;top:68%;height:22%;border-radius:4px;background:#b6bfcc;border:2px solid #94a3b8}
+.base:after{content:"";position:absolute;left:0;top:calc(50% - var(--w)*.03);width:calc(var(--w)*.025);height:calc(var(--w)*.06);background:#334155;border-radius:2px}
+.flash{position:relative;z-index:1;display:flex;align-items:center;cursor:pointer;border:0;background:none;padding:0;margin-bottom:calc(var(--w)*.21);transition:transform 1s cubic-bezier(.5,0,.3,1);animation:wig 1.4s ease-in-out infinite;filter:drop-shadow(0 8px 8px rgba(0,0,0,.45))}
+.flash:focus-visible{outline:3px solid #fff;outline-offset:6px;border-radius:8px}
+@keyframes wig{50%{transform:translateX(-8px)}}
+.flash.in{animation:none}
+.fbody{width:calc(var(--w)*.26);height:calc(var(--w)*.13);background:#ef4444;border-radius:calc(var(--w)*.035);position:relative}
+.fbody:before{content:"";position:absolute;left:12%;top:50%;width:calc(var(--w)*.035);height:calc(var(--w)*.035);margin-top:calc(var(--w)*-.0175);border-radius:50%;background:#7f1d1d}
+.fbody:after{content:"";position:absolute;right:10%;top:14%;width:calc(var(--w)*.025);height:calc(var(--w)*.025);border-radius:50%;background:#fde047}
+.conn{width:calc(var(--w)*.1);height:calc(var(--w)*.085);background:#e2e8f0;border-radius:0 3px 3px 0;display:flex;flex-direction:column;justify-content:center;gap:18%;padding:0 12%}
+.conn i{height:14%;background:#64748b;display:block}
+.cap{margin-top:34px;font-size:28px;text-align:center;text-shadow:0 2px 6px rgba(0,0,0,.55)}
+/* великі екрани */
+@media(min-width:1000px){
+.board{max-width:1120px}
+.note{width:min(100%,470px);min-height:330px;font-size:38px;padding:52px 36px 72px}
+.note.long{width:min(100%,620px);font-size:35px}
+.title{max-width:880px}.title h1{font-size:clamp(60px,8vw,120px)}.title p{font-size:36px}
+.hint{width:min(100%,440px);min-height:0}
+.stage{--w:clamp(380px,46vw,640px)}
+.cap{font-size:36px}.p{scale:1.7}.note .heart{transform:scale(1.7);left:30px;bottom:26px}
+}
+@media(min-width:1600px){
+.board{max-width:1400px}
+.note{width:min(100%,560px);min-height:400px;font-size:46px;padding:60px 42px 84px}
+.note.long{width:min(100%,760px);font-size:42px}
+.hint{width:min(100%,520px);min-height:0}
+.title{max-width:1050px}.title h1{font-size:150px}.title p{font-size:46px}
+.stage{--w:clamp(380px,42vw,800px)}
+.cap{font-size:44px}.p{scale:2.1}.note .heart{transform:scale(2)}
+}
+/* video */
+.vid{position:fixed;inset:0;z-index:20;background:#000;display:none;align-items:center;justify-content:center;opacity:0;transition:opacity .5s}
+.vid.open{display:flex}.vid.vis{opacity:1}
+.vid video{display:block;width:100%;height:100%;object-fit:contain;background:#000}
+.ph{position:absolute;text-align:center;font-size:34px;padding:20px;pointer-events:none}
+.x{position:absolute;right:16px;top:calc(16px + env(safe-area-inset-top,0px));z-index:3;width:44px;height:44px;border-radius:50%;border:0;background:rgba(255,255,255,.2);color:#fff;font-size:26px;cursor:pointer}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01s!important}.fh{display:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="kiss" viewBox="0 0 100 60"><path d="M4 32C18 18 32 9 43 14C47 16 48 18 50 18C52 18 53 16 57 14C68 9 82 18 96 32C80 36 62 38 50 38C38 38 20 36 4 32Z"/><path d="M4 32C20 36 38 38 50 38C62 38 80 36 96 32C89 48 70 57 50 57C30 57 11 48 4 32Z"/></symbol>
+</defs></svg>
+<div class="vig"></div>
+
+<header class="hero">
+  <div class="title">
+    <div class="kisses">
+      <svg class="k" viewBox="0 0 100 60" style="width:96px;top:-4px;left:-12px;transform:rotate(-24deg);opacity:.85"><use href="#kiss"/></svg>
+      <svg class="k" viewBox="0 0 100 60" style="width:84px;top:14px;right:-14px;transform:rotate(22deg);opacity:.7"><use href="#kiss"/></svg>
+      <svg class="k" viewBox="0 0 100 60" style="width:72px;bottom:-6px;left:26px;transform:rotate(10deg);opacity:.6"><use href="#kiss"/></svg>
+      <svg class="k" viewBox="0 0 100 60" style="width:100px;bottom:10px;right:30px;transform:rotate(-14deg);opacity:.8"><use href="#kiss"/></svg>
+      <svg class="k" viewBox="0 0 100 60" style="width:60px;top:46%;left:-20px;transform:rotate(-78deg);opacity:.5"><use href="#kiss"/></svg>
+    </div>
+    <h1>З днем народження, кохана!</h1>
+    <p>Гортай униз — на столі лежать записки</p>
+  </div>
+  <div class="arrow"></div>
+</header>
+
+<div class="desk">
+  <div class="p lip"></div>
+  <div class="p mug"><i class="heart"></i></div>
+  <div class="p pencil"></div>
+  <div class="p ruler"></div>
+  <div class="p plant"><b></b><i style="--a:0deg"></i><i style="--a:60deg"></i><i style="--a:120deg"></i><i style="--a:180deg"></i><i style="--a:240deg"></i><i style="--a:300deg"></i></div>
+  <div class="p rose"><b></b></div>
+  <div class="p petal" style="left:62%;top:55%;transform:rotate(30deg)"></div>
+  <div class="p petal" style="left:88%;top:52%;transform:rotate(-40deg);background:#fb7185"></div>
+  <div class="p petal" style="left:20%;top:38%;transform:rotate(110deg)"></div>
+  <div class="p petal" style="left:34%;top:72%;transform:rotate(-70deg);background:#fb7185"></div>
+  <div class="p petal" style="left:84%;top:90%;transform:rotate(50deg)"></div>
+  <div class="p pencil pencil2"></div>
+  <main class="board">
+    <div class="note" style="--r:-3deg;--bg:#fbcfe8">Вітаю тебе з твоїм днем, кохана, бажаю тобі все тільки най-най краще, ти неймовірна і 1000000% заслуговуєш на це!!!<i class="heart"></i></div>
+    <div class="note" style="--r:2.5deg;--bg:#fde68a">Я дуже радий, що ти з’явилась у моєму житті, ти сонечко, що дає мені стільки багато теплих відчуттів у житті, що важко описати<i class="heart"></i></div>
+    <div class="note" style="--r:-1.5deg;--bg:#fecdd3">Бажаю щоб життя давало тобі тільки хороше, побільше людей, які будуть на твоїй стороні.<i class="heart"></i></div>
+    <div class="note" style="--r:3deg;--bg:#ddd6fe">Щоб труднощі тобі не траплялись, а якщо і траплялись, то ти їх легко здолала (ти ж у нас супер боксер)))<i class="heart"></i></div>
+    <div class="note" style="--r:-2.5deg;--bg:#fed7aa">Бажаю, щоб усі поставлені тобою цілі ти змогла виконати з легкістю, щоб були тільки гарні учні в тебе (і платили вчасно)<i class="heart"></i></div>
+    <div class="note long" style="--r:1.5deg;--bg:#fbcfe8">ТИ синонім слова КРАСА, ти най най най КРАЩА, я завжди буду з тобою, кохана, і підтримаю тебе в чому тільки зможу, бажаю кайфувати від життя, ловити яскраво-кайфові моменти, щоб галерея ломилась від різноманіття фоток з подорожей, а погані моменти нехай тебе не чіпають)))<i class="heart"></i></div>
+  </main>
+</div>
+
+<section class="finale">
+  <div class="note hint show" style="--bg:#fecaca">Найголовніше привітання — на флешці. Встав її в ноутбук!<i class="heart"></i></div>
+  <div class="stage">
+    <button class="flash" id="flash" aria-label="Вставити флешку в ноутбук">
+      <div class="fbody"></div><div class="conn"><i></i><i></i></div>
+    </button>
+    <div class="laptop" id="laptop">
+      <div class="screen"><div class="disp"></div></div>
+      <div class="base" id="base"><div class="keys"></div><div class="pad"></div></div>
+    </div>
+  </div>
+  <div class="cap" id="cap">Натисни на флешку</div>
+</section>
+
+<div class="vid" id="vid" role="dialog" aria-label="Відео-привітання">
+  <button class="x" id="close" aria-label="Закрити">×</button>
+  <video id="video" controls playsinline></video>
+  <div class="ph" id="ph">Тут буде твоє відео з привітанням</div>
+</div>
+
+<script>
+var VIDEO_SRC = "video/vid.mp4"; // сюди підставимо відео
+var $ = function(i){return document.getElementById(i)};
+var flash=$("flash"), laptop=$("laptop"), vid=$("vid"), video=$("video"), inserted=false;
+
+var io = new IntersectionObserver(function(es){
+  es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("show"); io.unobserve(e.target);} });
+},{threshold:.25});
+document.querySelectorAll(".note:not(.show)").forEach(function(n){io.observe(n)});
+
+// повільні сердечка
+var cols=["#fb7185","#f43f5e","#fda4af","#e11d48"];
+for(var i=0;i<12;i++){
+  var h=document.createElement("i"); h.className="heart fh";
+  h.style.cssText="left:"+(Math.random()*96)+"%;--s:"+(.7+Math.random()*1.3).toFixed(2)+";--d:"+(16+Math.random()*14).toFixed(1)+"s;--l:-"+(Math.random()*24).toFixed(1)+"s;--x:"+(Math.random()*120-60).toFixed(0)+"px;--c:"+cols[i%4];
+  document.body.appendChild(h);
+}
+
+function plug(){
+  flash.style.transform="none";
+  var f=flash.getBoundingClientRect(), b=$("base").getBoundingClientRect();
+  var dx=b.left-f.right+b.width*.05, dy=(b.top+b.height/2)-(f.top+f.height/2);
+  flash.style.transform="translate("+dx+"px,"+dy+"px)";
+}
+function openVideo(){
+  vid.classList.add("open");
+  requestAnimationFrame(function(){vid.classList.add("vis")});
+  if(VIDEO_SRC){ video.style.display="block"; if(!video.getAttribute("src")) video.src=VIDEO_SRC; $("ph").style.display="none"; var p=video.play(); if(p&&p.catch)p.catch(function(){}); }
+  else { video.style.display="none"; }
+}
+flash.addEventListener("click",function(){
+  if(inserted){ openVideo(); return; }
+  inserted=true; flash.classList.add("in"); plug();
+  $("cap").textContent="Завантаження…";
+  setTimeout(function(){ laptop.classList.add("on"); $("cap").textContent="Натисни на флешку ще раз, щоб переглянути знову"; },1050);
+  setTimeout(openVideo,1900);
+});
+function warn(m){ var ph=$("ph"); ph.style.display="block"; ph.textContent=m||"Відео відтворюється без картинки: потрібен MP4 (H.264). Перекодуй файл, наприклад у HandBrake."; }
+video.addEventListener("loadedmetadata",function(){ if(video.videoWidth===0) warn(); });
+video.addEventListener("error",function(){ warn("Не вдалося завантажити відео. Перевір назву файлу в VIDEO_SRC і що він лежить в одній папці з сайтом."); });
+function closeVideo(){
+  vid.classList.remove("vis"); video.pause();
+  setTimeout(function(){vid.classList.remove("open")},500);
+}
+$("close").addEventListener("click",closeVideo);
+document.addEventListener("keydown",function(e){ if(e.key==="Escape") closeVideo(); });
+window.addEventListener("resize",function(){ if(inserted) plug(); });
+</script>
+</body>
+</html>
